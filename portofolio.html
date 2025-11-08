@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Randy Ratmawan | Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+    :root {
+      --primary: #2563eb;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --accent: #10b981;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* NAVBAR */
+    header {
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+    }
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--primary); }
+    .menu-toggle {
+      display: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      text-align: center;
+      padding: 140px 20px 100px;
+      background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: white;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.7);
+    }
+    .hero h1, .hero p { position: relative; z-index: 1; }
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: #e2e8f0;
+    }
+
+    /* ABOUT */
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 24px;
+    }
+    h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 32px;
+    }
+    .about {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+      color: #334155;
+    }
+
+    /* PROJECTS */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+    .project-card {
+      position: relative;
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .project-card h3 {
+      margin: 16px 0 6px;
+      text-align: center;
+      font-weight: 600;
+    }
+    .project-card p {
+      text-align: center;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+    }
+    .contact p {
+      margin-bottom: 10px;
+    }
+    .contact a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: var(--dark);
+      color: white;
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+      margin-top: 60px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 24px;
+        background: white;
+        width: 200px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        padding: 16px;
+        border-radius: 8px;
+      }
+      nav ul.active { display: flex; }
+      .menu-toggle { display: block; color: var(--dark); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo">Randy.dev</div>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+      <nav>
+        <ul id="nav-links">
+          <li><a href="#about">Tentang</a></li>
+          <li><a href="#projects">Project</a></li>
+          <li><a href="#contact">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Hai, Saya Randy Ratmawan</h1>
+    <p>Frontend Developer yang suka membuat tampilan web modern, responsif, dan interaktif.</p>
+  </section>
+
+  <section id="about">
+    <h2>Tentang Saya</h2>
+    <p class="about">
+      Saya seorang web developer pemula yang berfokus pada HTML, CSS, dan JavaScript. 
+      Saya menyukai desain bersih, animasi halus, dan pengalaman pengguna yang nyaman. 
+      Saat ini saya sedang mengembangkan kemampuan React dan ingin menjadi Fullstack Developer.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Project Terbaru</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1581276879432-15a19d654956?auto=format&fit=crop&w=800&q=80" alt="Landing Page">
+        <h3>Landing Page Coffee Shop</h3>
+        <p>HTML • CSS • Responsive</p>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=80" alt="Gallery Grid">
+        <h3>Gallery Grid</h3>
+        <p>CSS Grid • Hover Effect</p>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=800&q=80" alt="Login Form">
+        <h3>Form Login Interaktif</h3>
+        <p>HTML • CSS • JS</p>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80" alt="Dashboard">
+        <h3>Dashboard Sederhana</h3>
+        <p>HTML • CSS • JS DOM</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Kontak</h2>
+    <div class="contact">
+      <p>📧 <a href="mailto:randyratmawan14@gmail.com">randyratmawan14@gmail.com</a></p>
+      <p>💻 <a href="https://github.com/">GitHub</a> | <a href="#">LinkedIn</a></p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Randy Ratmawan | Rabel Market
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
